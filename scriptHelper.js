@@ -23,9 +23,7 @@ function validateInput(testInput) {
 
 
 }
-}
 
-}
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (typeof(pilot) != string || typeof(copilot) != string) {
