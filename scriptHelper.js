@@ -28,10 +28,13 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    if (typeof(pilot) != string || ) {
-        alert("Please enter a valid pilot name")
+    if (typeof(pilot) != string || typeof(copilot) != string) {
+        alert("Please enter a valid  name")
     }
+    if (isNaN(fuelLevel) = true || isNaN(cargoLevel) = true) {
+        alert("Please enter valid Level")
 
+    }
 
 }
 
