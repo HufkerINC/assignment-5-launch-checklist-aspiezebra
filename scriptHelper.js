@@ -29,11 +29,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (typeof(pilot) != string || typeof(copilot) != string) {
         alert("Please enter a valid  name")
     }
-    if (isNaN(fuelLevel) = true || isNaN(cargoLevel) = true) {
+    if (isNaN(fuelLevel) = true) {
         alert("Please enter valid Level")
 
     }
+    if (isNaN(cargoLevel) = true) {
+        alert("Please enter valid Level")
 
+    }
 }
 
 async function myFetch() {
