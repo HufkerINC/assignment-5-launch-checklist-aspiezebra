@@ -27,11 +27,11 @@ function validateInput(testInput) {
 
 
 
-    alert("All Fields Required!!!!")
+    // alert("All Fields Required!!!!")
 }
 
 
-}
+
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
