@@ -14,17 +14,15 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  </ol>
                  <img src="">
     */
-    let dimissheader = document.createElement("h2")
-    let listI1, listI2, listI3, listI4, listI5 = document.createElement("li");
-    let orlist = document.createElement("ol");
-    let listImg = document.createElement("img")
-};
+
+
+}
 function validateInput(testInput) {
     if (testInput === "" || testInput === undefined) {
         return "Empty";
     } else if (isNaN(testInput)) {
         return "Not a Number";
-    } else if (!isNaN(testInput)) {
+    } else if (typeof(testInput)===Number) {
         return "Is a Number";
     }
 
@@ -44,6 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
 
+
     if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
         alert("Please Enter a Number for Cargo Level")
     }
@@ -56,6 +55,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
         alert("Pilot must be made of letters and/or words")
     }
+
+    if(fuelLevel < 10,000){
+        list.style.visibility=  'visible' ;
+    }
+    if(carcoLevel > 10,000){
+        list.style.visibility=  'visible' ;
+    }
 }
 
 async function myFetch() {
@@ -66,10 +72,15 @@ async function myFetch() {
     return planetsReturned;
 }
 
-function pickPlanet(planets) {}
+function pickPlanet(planets) {
+
+}
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet;
 module.exports.myFetch = myFetch;
+
+
+
