@@ -25,7 +25,7 @@ function validateInput(testInput) {
         return "Empty"
     } else if (isNaN(testInput)) {
         return "Not a Number"
-    } else if ((!isNaN(testInput))) {
+    } else if (!isNaN(testInput)) {
         return "Is a Number"
     }
 
