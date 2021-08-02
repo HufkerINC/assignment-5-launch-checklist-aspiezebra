@@ -35,7 +35,24 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let pilot1 = document.getElementById("pilotStatus");
+    let copilot1 = document.getElementById("copilotStatus");
+    let launchStatus = document.getElementById("launchStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
 
+    if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
+        alert("Please Enter a Number for Cargo Level")
+    }
+    if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
+        alert("Please Enter a Number for Fuel Level")
+    }
+    if (validateInput(coPilot) === "Empty" || validateInput(coPilot) === "Is a Number") {
+        alert("coPilot must be made of letters and/or words")
+    }
+    if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
+        alert("Pilot must be made of letters and/or words")
+    }
 }
 
 async function myFetch() {
