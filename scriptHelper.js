@@ -14,6 +14,10 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  </ol>
                  <img src="">
     */
+    let dimissheader = document.createElement("h2")
+    let listI1, listI2, listI3, listI4, listI5 = document.createElement("li");
+    let orlist = document.createElement("ol");
+    let listImg = document.createElement("img");
 }
 
 function validateInput(testInput) {
