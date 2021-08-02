@@ -17,16 +17,15 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     let dimissheader = document.createElement("h2")
     let listI1, listI2, listI3, listI4, listI5 = document.createElement("li");
     let orlist = document.createElement("ol");
-    let listImg = document.createElement("img");
-}
-
+    let listImg = document.createElement("img")
+};
 function validateInput(testInput) {
     if (testInput === "" || testInput === undefined) {
-        return "Empty"
+        return "Empty";
     } else if (isNaN(testInput)) {
-        return "Not a Number"
+        return "Not a Number";
     } else if (!isNaN(testInput)) {
-        return "Is a Number"
+        return "Is a Number";
     }
 
 
