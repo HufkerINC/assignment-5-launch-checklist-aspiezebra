@@ -20,6 +20,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
     if (testInput === "" || testInput === undefined) {
         return "Empty";
+        
     } else if (isNaN(testInput)) {
         return "Not a Number";
     } else if (!isNaN(testInput)) {
@@ -96,6 +97,3 @@ module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet;
 module.exports.myFetch = myFetch;
-
-
-
