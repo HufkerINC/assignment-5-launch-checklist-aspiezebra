@@ -43,7 +43,7 @@ function validateInput(testInput) {
     }
 
 
-    // alert("All Fields Required!!!!")
+    //window. alert("All Fields Required!!!!")
 }
 
 
@@ -59,16 +59,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
     if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
-        alert("Please Enter a Number for Cargo Level");
+       window. alert("Please Enter a Number for Cargo Level");
     }
     if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
-        alert("Please Enter a Number for Fuel Level");
+       window. alert("Please Enter a Number for Fuel Level");
     }
     if (validateInput(coPilot) === "Empty" || validateInput(coPilot) === "Is a Number") {
-        alert("coPilot must be made of letters and/or words");
+       window. alert("coPilot must be made of letters and/or words");
     }
     if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
-        alert("Pilot must be made of letters and/or words");
+       window. alert("Pilot must be made of letters and/or words");
     }
   if(fuelLevel < 10000 && cargoLevel > 10000){
           list.style.visibility=  "visible" ;
