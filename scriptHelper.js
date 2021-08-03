@@ -3,7 +3,8 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    /*
+    const div = document.getElementById("missionTarget");
+    div.innerHTML = `
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: </li>
@@ -13,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Number of Moons: </li>
                  </ol>
                  <img src="">
-    */
+                 `;
 
 
 }
@@ -74,7 +75,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
           list.style.visibility=  "visible" ;
         // launchStatus.style.color = "#C7254E";
         //  launchStatus.style.color = "rbg(199, 37, 78)";
-        launchStatus.innerHTML="Shuttle NOT ready for launch yet";
+        launchStatus.innerHTML="Shuttle NOT ready for launch";
         cargoStatus.innerHTML="Cargo mass too heavy for launch";
         launchStatus.style.color ="red";
         fuelStatus.innerHTML="Fuel level too low for launch";
@@ -84,12 +85,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         // launchStatus.style.color = "#C7254E";
         //  launchStatus.style.color = "rbg(199, 37, 78)";
         launchStatus.style.color = "red";
-        launchStatus.innerHTML="Shuttle NOT ready for launch yet";
+        launchStatus.innerHTML="Shuttle NOT ready for launch";
         fuelStatus.innerHTML="Fuel level too low for launch";
 
     }
     if(fuelLevel >= 10000 && cargoLevel <= 10000){
-        launchStatus.innerHTML = "Shuttle Ready for launch";
+        launchStatus.innerHTML = "Shuttle is Ready for launch";
         // launchStatus.style.color = "#419f6a";
         // launchStatus.style.color = "rbg(65, 159, 106)";
         launchStatus.style.color ="green";
@@ -100,7 +101,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         list.style.visibility=  "visible" ;
         // launchStatus.style.color = "#C7254E";
         //  launchStatus.style.color = "rbg(199, 37, 78)";
-        launchStatus.innerHTML="Shuttle NOT ready for launch yet";
+        launchStatus.innerHTML="Shuttle NOT ready for launch";
         cargoStatus.innerHTML="Cargo mass too heavy for launch";
         launchStatus.style.color ='red';
     }
