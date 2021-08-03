@@ -59,16 +59,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
     if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
-        alert("Please Enter a Number for Cargo Level")
+        alert("Please Enter a Number for Cargo Level");
     }
     if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
-        alert("Please Enter a Number for Fuel Level")
+        alert("Please Enter a Number for Fuel Level");
     }
     if (validateInput(coPilot) === "Empty" || validateInput(coPilot) === "Is a Number") {
-        alert("coPilot must be made of letters and/or words")
+        alert("coPilot must be made of letters and/or words");
     }
     if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
-        alert("Pilot must be made of letters and/or words")
+        alert("Pilot must be made of letters and/or words");
     }
   if(fuelLevel < 10000 && cargoLevel > 10000){
           list.style.visibility=  "visible" ;
