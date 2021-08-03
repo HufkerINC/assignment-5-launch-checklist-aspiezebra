@@ -26,10 +26,13 @@ function validateInput(testInput) {
     // } else if (!isNaN(testInput)) {
     //     return "Is a Number";
     // }
- if (testInput == "" || testInput == undefined) {
+ if (testInput == "" ) {
         return "Empty";
-
-    } else if (isNaN(testInput)) {
+    } else if(testInput === null){
+        return "Empty"
+    }else if(testInput === undefined){
+        return "Empty"
+    }else   if (isNaN(testInput)) {
         return "Not a Number";
     } else if (!isNaN(testInput)) {
         return "Is a Number";
