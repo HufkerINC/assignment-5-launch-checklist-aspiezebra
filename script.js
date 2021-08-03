@@ -1,7 +1,12 @@
 // Write your JavaScript code here!
-
+const {myFetch, pickPlanet} = require("./scriptHelper");
 window.addEventListener("load", function() {
-
+    let document = window.document
+    let pilot = document.querySelector("input[name=pilotName]");
+    let fuelLevel = document.querySelector("input[name=fuelLevel]");
+    let cargoLevel = document.querySelector("input[name=cargoLevel]");
+    let coPilot = document.querySelector("input[name=coPilotName]");
+    let list = document.getElementById("faultyItems");
     let listedPlanets =;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse= ;
@@ -14,3 +19,8 @@ window.addEventListener("load", function() {
     })
 
 });
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput= validateInput;
+module.exports.formSubmission= formSubmission;
+module.exports.pickPlanet=pickPlanet;
+module.exports.myFetch=myFetch;
