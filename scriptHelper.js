@@ -30,6 +30,10 @@ function validateInput(testInput) {
         return "Empty";
     } else if(testInput === null){
         return "Empty"
+    }else if(testInput == null){
+        return "Empty"
+    }else if(testInput == undefined){
+        return "Empty"
     }else if(testInput === undefined){
         return "Empty"
     }else   if (isNaN(testInput)) {
