@@ -18,7 +18,15 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 }
 function validateInput(testInput) {
-    if (testInput === "" || testInput === undefined) {
+    // if (testInput === "" || testInput === undefined) {
+    //     return "Empty";
+
+    // } else if (isNaN(testInput)) {
+    //     return "Not a Number";
+    // } else if (!isNaN(testInput)) {
+    //     return "Is a Number";
+    // }
+ if (testInput == "" || testInput == undefined) {
         return "Empty";
 
     } else if (isNaN(testInput)) {
@@ -28,8 +36,7 @@ function validateInput(testInput) {
     }
 
 
-
-    // alert("All Fields Required!!!!")
+    alert("All Fields Required!!!!")
 }
 
 
