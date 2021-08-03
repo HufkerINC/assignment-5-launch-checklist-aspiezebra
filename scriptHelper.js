@@ -3,8 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    const div = document.getElementById("missionTarget");
-    div.innerHTML = `
+/*
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: </li>
@@ -13,9 +12,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Distance from Earth: </li>
                      <li>Number of Moons: </li>
                  </ol>
-                 <img src="">
+                 <img src="${imageUrl}">
                  `;
-
+*/
 
 }
 function validateInput(testInput) {
@@ -44,7 +43,7 @@ function validateInput(testInput) {
     }
 
 
-    //window. alert("All Fields Required!!!!")
+    window. alert("All Fields Required!!!!")
 }
 
 
@@ -52,6 +51,9 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    if(validateInput(pilot)==="Empty"||validateInput(fuelLevel)==="Empty"||validateInput(cargoLevel)==="Empty"||validateInput(coPilot)){
+        window.alert("ALL FIELDS REQUIRED!!!!");
+    }
     let pilot1 = document.getElementById("pilotStatus");
     let copilot1 = document.getElementById("copilotStatus");
     let launchStatus = document.getElementById("launchStatus");
@@ -62,6 +64,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
        window. alert("Please Enter a Number for Cargo Level");
     }
+
     if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
        window. alert("Please Enter a Number for Fuel Level");
     }
