@@ -10,7 +10,7 @@ addEventListener("load", function() {
     let listedPlanets ="enter";
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse="enter" ;
-    listedPlanetsResponse.then(function(result) {
+        listedPlanetsResponse.then(function(result) {
         listedPlanets = result;
         console.log(listedPlanets);
     }).then(function() {
