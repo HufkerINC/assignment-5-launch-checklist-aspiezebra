@@ -111,7 +111,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 async function myFetch() {
-    let planetsReturned = 0;
+    let planetsReturned = "enter";
 
     planetsReturned = await fetch().then(function(response) {});
 
