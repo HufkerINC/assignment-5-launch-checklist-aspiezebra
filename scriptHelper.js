@@ -52,7 +52,7 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if(validateInput(pilot)==="Empty"||validateInput(fuelLevel)==="Empty"||validateInput(cargoLevel)==="Empty"||validateInput(coPilot)){
-        window.alert("ALL FIELDS REQUIRED!!!!");
+        alert("ALL FIELDS REQUIRED!!!!");
     }
     let pilot1 = document.getElementById("pilotStatus");
     let copilot1 = document.getElementById("copilotStatus");

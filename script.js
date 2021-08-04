@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 const {myFetch, pickPlanet} = require("./scriptHelper");
-window.addEventListener("load", function() {
+addEventListener("load", function() {
     let document = window.document
     let pilot = document.querySelector("input[name=pilotName]");
     let fuelLevel = document.querySelector("input[name=fuelLevel]");
