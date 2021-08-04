@@ -27,7 +27,7 @@ function validateInput(testInput) {
     // } else if (!isNaN(testInput)) {
     //     return "Is a Number";
     // }
- if (testInput == "" ) {
+    if (testInput == "" ) {
         return "Empty";
     } else if(testInput === null){
         return "Empty"
