@@ -29,14 +29,6 @@ function validateInput(testInput) {
     // }
     if (testInput == "" ) {
         return "Empty";
-    } else if(testInput === null){
-        return "Empty"
-    }else if(testInput == null){
-        return "Empty"
-    }else if(testInput == undefined){
-        return "Empty"
-    }else if(testInput === undefined){
-        return "Empty"
     }else   if (isNaN(testInput)) {
         return "Not a Number";
     } else if (!isNaN(testInput)) {
@@ -51,67 +43,24 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    if(validateInput(pilot)==="Empty"||validateInput(fuelLevel)==="Empty"||validateInput(cargoLevel)==="Empty"||validateInput(coPilot)){
-        alert("ALL FIELDS REQUIRED!");
-    }
-    let pilotStatus = document.getElementById("pilotStatus");
-    let copilotStatus = document.getElementById("copilotStatus");
-    let launchStatus = document.getElementById("launchStatus");
-    let fuelStatus = document.getElementById("fuelStatus");
-    let cargoStatus = document.getElementById("cargoStatus");
-
-
     if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
-        alert("Please Enter a Number for Cargo Level");
-    }
+          alert("Please Enter a Number for Cargo Level");
+      }
 
-    if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
-        alert("Please Enter a Number for Fuel Level");
-    }
-    if (validateInput(coPilot) === "Empty" || validateInput(coPilot) === "Is a Number") {
-        alert("coPilot must be made of letters and/or words");
-    }
-    if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
-        alert("Pilot must be made of letters and/or words");
-    }
-  if(fuelLevel < 10000 && cargoLevel > 10000){
-          list.style.visibility=  "visible" ;
-        // launchStatus.style.color = "#C7254E";
-        //  launchStatus.style.color = "rbg(199, 37, 78)";
-        launchStatus.innerHTML="Shuttle NOT ready for launch";
-        cargoStatus.innerHTML="Cargo mass too heavy for launch";
-        launchStatus.style.color ="red";
-        fuelStatus.innerHTML="Fuel level too low for launch";
-    }
-    if(fuelLevel < 10000 && cargoLevel < 10000){
-        list.style.visibility=  "visible";
-        // launchStatus.style.color = "#C7254E";
-        //  launchStatus.style.color = "rbg(199, 37, 78)";
-        launchStatus.style.color = "red";
-        launchStatus.innerHTML="Shuttle NOT ready for launch";
-        fuelStatus.innerHTML="Fuel level too low for launch";
+      if (validateInput(fuelLevel) === "Not A Number" || validateInput(fuelLevel) === "Empty") {
+          alert("Please Enter a Number for Fuel Level");
+      }
+      if (validateInput(coPilot) === "Empty" || validateInput(coPilot) === "Is a Number") {
+          alert("coPilot must be made of letters and/or words");
+      }
+      if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
+          alert("Pilot must be made of letters and/or words");
+      }
 
-    }
-    if(fuelLevel >= 10000 && cargoLevel <= 10000){
-        launchStatus.innerHTML = "Shuttle is Ready for launch";
-        // launchStatus.style.color = "#419f6a";
-        // launchStatus.style.color = "rbg(65, 159, 106)";
-        launchStatus.style.color ="green";
-        list.style.visibility = "hidden";
-    }
-
-    if(cargoLevel > 10000 && fuelLevel > 10000){
-        list.style.visibility=  "visible" ;
-        // launchStatus.style.color = "#C7254E";
-        //  launchStatus.style.color = "rbg(199, 37, 78)";
-        launchStatus.innerHTML="Shuttle NOT ready for launch";
-        cargoStatus.innerHTML="Cargo mass too heavy for launch";
-        launchStatus.style.color ='red';
-    }
 }
 
 async function myFetch() {
-    let planetsReturned = "enter";
+    let planetsReturned = "";
 
     planetsReturned = await fetch().then(function(response) {});
 

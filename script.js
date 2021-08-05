@@ -1,5 +1,6 @@
 // Write your JavaScript code here!
 const {myFetch, pickPlanet} = require("./scriptHelper");
+
 addEventListener("load", function() {
     let document = window.document
     let pilot = document.querySelector("input[name=pilotName]");
@@ -7,6 +8,8 @@ addEventListener("load", function() {
     let cargoLevel = document.querySelector("input[name=cargoLevel]");
     let coPilot = document.querySelector("input[name=coPilotName]");
     let list = document.getElementById("faultyItems");
+
+
     let listedPlanets ="enter";
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse="enter" ;
