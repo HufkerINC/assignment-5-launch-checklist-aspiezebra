@@ -15,6 +15,21 @@ addEventListener("load", function() {
         if(validateInput(copilot.value)==="Empty"||   validateInput(pilot.value)=== "Empty"||validateInput(fuelLevel.value)==="Empty"||validateInput(cargoLevel.value)==="Empty"){
             alert('All fields are Required!');
             list.style.visibility="hidden";
+               event.preventDefault();
+        }
+        if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
+            list.style.visibility = "hidden";
+            alert("Enter nameS for Pilot and Co-pilot.");
+            event.preventDefault();
+        }
+
+        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
+            list.style.visibility = "hidden";
+            alert("Fuel Level and Cargo Mass MUST numbers.");
+            event.preventDefault();
+        }
+        event.preventDefault();
+    })
         }
     })
     let listedPlanets =;
