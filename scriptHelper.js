@@ -43,23 +43,23 @@ function validateInput(testInput) {
 
 
 
-function formSubmission(document, list, pilot, coPilot, fuelLevel, cargoLevel) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let pilotStatus = document.getElementById("pilotStatus");
-    let coPilotStatus = document.getElementById("coPilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
     // let cargoInput = document.getElementById("cargoLevel");
     // let fuelInput = document.getElementById("fuelLevel");
     // let pilotInput = document.getElementById("pilotStatus");
-    // let coPilotInput = document.getElementById("coPilotStatus");
+    // let copilotInput = document.getElementById("copilotStatus");
     let error1 = "";
     let error2 ="";
     let levelGuide = 10000;
-    if(isNaN(pilot)&&isNaN(coPilot)){
+    if(isNaN(pilot)&&isNaN(copilot)){
          pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
-        coPilotStatus.innerHTML =`Co-pilot ${coPilot} is ready for launch`;
-    } else if(!isNaN(pilot)||!isNaN(coPilot)){
+        copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
+    } else if(!isNaN(pilot)||!isNaN(copilot)){
         if(!isNaN(pilot)){
              pilotStatus.innerHTML =`please enter a name for the pilot `;
               launchStatus.innerHTML= "Shuttle Not Ready for Launch";
@@ -67,8 +67,8 @@ function formSubmission(document, list, pilot, coPilot, fuelLevel, cargoLevel) {
               list.style.visibility = "visible";
 
              }
-       if(!isNaN(coPilot)){
-            coPilotStatus.innerHTML =`please enter a name for the coPilot `;
+       if(!isNaN(copilot)){
+            copilotStatus.innerHTML =`please enter a name for the copilot `;
              launchStatus.innerHTML= "Shuttle Not Ready for Launch";
              list.style.visibility = "visible";
              launchStatus.style.color ="rgb(199, 37, 78)";
@@ -104,7 +104,7 @@ function formSubmission(document, list, pilot, coPilot, fuelLevel, cargoLevel) {
         if(cargoLevel <= levelGuide && fuelLevel>= levelGuide&& isNaN(pilot)&& isNaN(coPilot)){
             list.style.visibility = "hidden";
             pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
-            coPilotStatus.innerHTML =`Co-pilot ${coPilot} is ready for launch`;
+            copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
              launchStatus.innerHTML= "Shuttle is Ready for Launch"
         }
@@ -112,17 +112,17 @@ function formSubmission(document, list, pilot, coPilot, fuelLevel, cargoLevel) {
 
 
 
-    // if (validateInput(pilot)==="Empty" || validateInput(coPilot)=== "Empty"|| validateInput(fuelLevel)=== "Empty"|| validateInput(cargoLevel)=== "Empty"){
+    // if (validateInput(pilot)==="Empty" || validateInput(copilot)=== "Empty"|| validateInput(fuelLevel)=== "Empty"|| validateInput(cargoLevel)=== "Empty"){
     //     alert("All fields are required!");
 
-    // } else if (validateInput(pilot)==="Is a number"||validateInput(coPilot)==="Is a number"||validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
-    //     if(validateInput(pilot)==="Is a number"||validateInput(coPilot)==="Is a number"){
-    //         if(validateInput(pilot)==="Is a number" &&validateInput(coPilot)==="Is a number"  ){
-    //             error1 = "pilot and coPilot"
+    // } else if (validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"||validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
+    //     if(validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"){
+    //         if(validateInput(pilot)==="Is a number" &&validateInput(copilot)==="Is a number"  ){
+    //             error1 = "pilot and copilot"
     //         } else if (validateInput(pilot)==="Is a number"){
     //             error1 = "pilot"
-    //         } else if (validateInput(coPilot)==="Is a number"){
-    //             error1 = "coPilot"
+    //         } else if (validateInput(copilot)==="Is a number"){
+    //             error1 = "copilot"
     //         }
     //         console.log(`please enter a name for ${error1}`)
     //     } else if (validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
