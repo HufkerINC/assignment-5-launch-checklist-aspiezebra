@@ -17,35 +17,37 @@ addEventListener("load", function() {
             list.style.visibility="hidden";
                event.preventDefault();
         }
-        if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
+      if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
             list.style.visibility = "hidden";
-            alert("Enter nameS for Pilot and Co-pilot.");
+            alert("Enter a name for Pilot and Co-pilot.");
             event.preventDefault();
         }
 
         if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
             list.style.visibility = "hidden";
-            alert("Fuel Level and Cargo Mass MUST numbers.");
+            alert("Fuel Level and Cargo Mass should be numbers only.");
             event.preventDefault();
         }
         event.preventDefault();
     })
         }
     })
-    let listedPlanets =;
+    let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse= ;
+    let listedPlanetsResponse=myFetch() ;
         listedPlanetsResponse.then(function(result) {
         listedPlanets = result;
         console.log(listedPlanets);
     }).then(function() {
         console.log(listedPlanets);
+        let planetPicked = planetPicked(listedPlanets);
+         addDestinationInfo(window.document, pickedPlanet.name, pickedPlanet.diameter, pickedPlanet.star, pickedPlanet.distance, pickedPlanet.moons, pickedPlanet.image);
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
     })
 
 });
-module.exports.addDestinationInfo = addDestinationInfo;
-module.exports.validateInput= validateInput;
-module.exports.formSubmission= formSubmission;
-module.exports.pickPlanet=pickPlanet;
-module.exports.myFetch=myFetch;
+// module.exports.addDestinationInfo = addDestinationInfo;
+// module.exports.validateInput= validateInput;
+// module.exports.formSubmission= formSubmission;
+// module.exports.pickPlanet=pickPlanet;
+// module.exports.myFetch=myFetch;
