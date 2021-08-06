@@ -106,14 +106,23 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
         } else {
-             list.style.visibility = "hidden";
-            pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
-            copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
+            //  list.style.visibility = "visible";
+            // pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
+            // copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
-
+             list.style.visibility="hidden";
+             pilotStatus.textContent="Pilot Ready";
+             copilotStatus.textContent="Co-pilot Ready";
+             fuelStatus.textContent="Fuel level high enough for launch";
+             cargoStatus.textContent="Cargo mass low enough for launch";
         }
+    //     list.style.visibility="hidden"
+    //  pilotStatus.textContent="Pilot Ready"
+    //   copilotStatus.textContent="Co-pilot Ready"
+    //   fuelStatus.textContent="Fuel level high enough for launch"
+    //   cargoStatus.textContent="Cargo mass low enough for launch"
         if(cargoLevel <= levelGuide && fuelLevel>= levelGuide&& isNaN(pilot)&& isNaN(copilot)){
-            list.style.visibility = "hidden";
+            list.style.visibility = "visible";
             pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
             copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
