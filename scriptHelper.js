@@ -118,7 +118,7 @@ launchStatus.innerHTML = "Shuttle is Ready for Launch";
 pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
 copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 }
-}
+
 
 async function myFetch() {
 let planetsReturned;
