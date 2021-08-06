@@ -30,7 +30,7 @@ addEventListener("load", function() {
         }
         event.preventDefault();
     })
-        
+
     })
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -45,7 +45,7 @@ addEventListener("load", function() {
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
     })
 
-});
+
 // module.exports.addDestinationInfo = addDestinationInfo;
 // module.exports.validateInput= validateInput;
 // module.exports.formSubmission= formSubmission;
