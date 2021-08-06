@@ -6,7 +6,7 @@ addEventListener("load", function() {
     let pilot = document.querySelector("input[name=pilotName]");
     let fuelLevel = document.querySelector("input[name=fuelLevel]");
     let cargoLevel = document.querySelector("input[name=cargoLevel]");
-    let coPilot = document.querySelector("input[name=coPilotName]");
+    let copilot = document.querySelector("input[name=coPilotName]");
     let list = document.getElementById("faultyItems");
 
 
