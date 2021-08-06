@@ -61,6 +61,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
+    list.style.visibility = "hidden";
     // let cargoInput = document.getElementById("cargoLevel");
     // let fuelInput = document.getElementById("fuelLevel");
     // let pilotInput = document.getElementById("pilotStatus");
