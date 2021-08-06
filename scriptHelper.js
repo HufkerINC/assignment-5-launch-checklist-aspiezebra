@@ -5,28 +5,28 @@ require('isomorphic-fetch');
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
     let destination = document.getElementById("missionTarget");
-    // destination.innerHTML =`
-    //              <h2>Mission Destination</h2>
-    //              <ol>
-    //                  <li>Name: </li>
-    //                  <li>Diameter: </li>
-    //                  <li>Star: ${star}</li>
-    //                  <li>Distance from Earth: </li>
-    //                  <li>Number of Moons: </li>
-    //              </ol>
-    //              <img src="${imageUrl}">
-    //              `;
-    destination.innerHTML = `
-        <h2>MissionDestination</h2>
-            <ol>
-                <li>Name: ${name}</li>
-                <li>Diameter: ${diameter}</li>
-                <li>Star: ${star}</li>
-                <li>Distance from Earth: ${distance}</li>
-                <li>Number of Moons: ${moons}</li>
-            </ol>
-            <imgsrc="https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg">
-    `
+    destination.innerHTML =`
+                 <h2>Mission Destination</h2>
+                 <ol>
+                     <li>Name: ${name}</li>
+                     <li>Diameter: ${diameter}</li>
+                     <li>Star: ${star}</li>
+                     <li>Distance from Earth: ${distance}</li>
+                     <li>Number of Moons: ${moons}</li>
+                 </ol>
+                 <img src="${imageUrl}">
+                 `;
+    // destination.innerHTML = `
+    //     <h2>MissionDestination</h2>
+    //         <ol>
+    //             <li>Name: ${name}</li>
+    //             <li>Diameter: ${diameter}</li>
+    //             <li>Star: ${star}</li>
+    //             <li>Distance from Earth: ${distance}</li>
+    //             <li>Number of Moons: ${moons}</li>
+    //         </ol>
+    //         <imgsrc="https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg">
+    // `
 
 
 }
