@@ -74,8 +74,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             console.log(`please enter a number for ${error2}`)
 
         }
-
-
     }
     // if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
     //       alert("Please Enter a Number for Cargo Level");
@@ -90,15 +88,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //   if (validateInput(pilot) === "Empty" || validateInput(pilot) === "Is a Number") {
     //       alert("Pilot must be made of letters and/or words");
     //   }
-//CHECK FUEL AND CARGO LEVELS
-
-
-
-async function myFetch() {
-let planetsReturned;
-let url = "https://handlers.education.launchcode.org/static/planets.json";
-planetsReturned = await fetch(url).then( function(response) {
-return response.json();
 
 }
 
