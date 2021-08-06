@@ -57,33 +57,33 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let error2 ="";
     let levelGuide = 10000;
     if(isNaN(pilot)&&isNaN(copilot)){
-         pilotStatus.innerHTML =`Pilot ${pilot} is ready for Launch`;
-        copilotStatus.innerHTML =`Copilot ${copilot} is ready for Launch`;
+         pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
     } else if(!isNaN(pilot)||!isNaN(copilot)){
         if(!isNaN(pilot)){
              pilotStatus.innerHTML =`please enter a name for the pilot `;
-              launchStatus.innerHTML= "Shuttle is not Ready for Launch";
-              launchStatus.style.color ="red";
+              launchStatus.innerHTML= "Shuttle Not Ready for Launch";
+              launchStatus.style.color ="rgb(199, 37, 78)";
               list.style.visibility = "visible";
 
              }
        if(!isNaN(copilot)){
             copilotStatus.innerHTML =`please enter a name for the copilot `;
-             launchStatus.innerHTML= "Shuttle is not Ready  for Launch";
+             launchStatus.innerHTML= "Shuttle Not Ready for Launch";
              list.style.visibility = "visible";
-             launchStatus.style.color ="red";
+             launchStatus.style.color ="rgb(199, 37, 78)";
             }
         }
         if(cargoLevel > levelGuide &&fuelLevel < levelGuide){
-            launchStatus.style.color ="red";
-             launchStatus.innerHTML= "Shuttle is not Ready for Launch";
+            launchStatus.style.color ="rgb(199, 37, 78)";
+             launchStatus.innerHTML= "Shuttle Not Ready for Launch";
             list.style.visibility = "visible";
 
             fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo Level too heavy for launch";
         } else if(cargoLevel > levelGuide && fuelLevel>= levelGuide){
-             launchStatus.style.color ="red";
-              launchStatus.innerHTML= "Shuttle is not Ready for Launch";
+             launchStatus.style.color ="rgb(199, 37, 78)";
+              launchStatus.innerHTML= "Shuttle Not Ready for Launch";
             list.style.visibility = "visible";
             //  fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo Level too heavy for launch";
@@ -91,8 +91,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } else if(cargoLevel <= levelGuide && fuelLevel< levelGuide){
              fuelStatus.innerHTML = "Fuel level too low for launch";
             // cargoStatus.innerHTML = "Cargo Level too heavy for launch";
-             launchStatus.style.color ="red";
-              launchStatus.innerHTML= "Shuttle is not Ready for Launch";
+             launchStatus.style.color ="rgb(199, 37, 78)";
+              launchStatus.innerHTML= "Shuttle Not Ready for Launch";
             list.style.visibility = "visible";
         }else if(cargoLevel <= levelGuide && fuelLevel>= levelGuide){
             //  fuelStatus.innerHTML = "Fuel level too low for launch";
@@ -101,7 +101,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             list.style.visibility = "hidden";
             launchStatus.innerHTML= "Shuttle is Ready for Launch"
         }
-    
+
 
 
 
