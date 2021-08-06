@@ -54,29 +54,47 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // let pilotInput = document.getElementById("pilotStatus");
     // let copilotInput = document.getElementById("copilotStatus");
     let error1 = "";
-    let error2 =""
-    if (validateInput(pilot)==="Empty" || validateInput(copilot)=== "Empty"|| validateInput(fuelLevel)=== "Empty"|| validateInput(cargoLevel)=== "Empty"){
-        alert("All fields are required!");
+    let error2 ="";
+    let levelGuide = 10000;
+    if(isNaN(pilot)&&isNaN(copilot)){
+        if(cargoLevel > levelGuide &&fuelLevel < levelGuide){
+            launchStatus.style.color ="red";
+            list.style.visibility = "visible";
+            pilotStatus.innerHTML =`Pilot ${pilot} is ready for Launch`;
+            copilotStatus.innerHTML =`Copilot ${copilot} is ready for Launch`;
+            fuelStatus.innerHTML = "Fuel level too low for launch";
+            cargoStatus.innerHTML = "Cargo Level too heavy for launch"
+        } else if(cargoLevel > levelGuide && fuelLevel>= levelGuide){
+             launchStatus.style.color ="red";
+            list.style.visibility = "visible";
+            pilotStatus.innerHTML =`Pilot ${pilot} is ready for Launch`;
+            copilotStatus.innerHTML =`Copilot ${copilot} is ready for Launch`;
 
-    } else if (validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"||validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
-        if(validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"){
-            if(validateInput(pilot)==="Is a number" &&validateInput(copilot)==="Is a number"  ){
-                error1 = "pilot and copilot"
-            } else if (validateInput(pilot)==="Is a number"){
-                error1 = "pilot"
-            } else if (validateInput(copilot)==="Is a number"){
-                error1 = "copilot"
-            }
-            console.log(`please enter a name for ${error1}`)
-        } else if (validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
-            if(validateInput(cargoLevel) ==="Not a Number"&&validateInput(fuelLevel) ==="Not a Number" ){
-                error2 = "cargo level and fuel level"
-            } else if (validateInput(cargoLevel) ==="Not a Number"){
-                error2 = "cargo level"
-            } else if (validateInput(fuelLevel) ==="Not a Number" ){
-                error2 = "fuel level"
-            }
-            console.log(`please enter a number for ${error2}`)
+        }
+    }
+
+    // if (validateInput(pilot)==="Empty" || validateInput(copilot)=== "Empty"|| validateInput(fuelLevel)=== "Empty"|| validateInput(cargoLevel)=== "Empty"){
+    //     alert("All fields are required!");
+
+    // } else if (validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"||validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
+    //     if(validateInput(pilot)==="Is a number"||validateInput(copilot)==="Is a number"){
+    //         if(validateInput(pilot)==="Is a number" &&validateInput(copilot)==="Is a number"  ){
+    //             error1 = "pilot and copilot"
+    //         } else if (validateInput(pilot)==="Is a number"){
+    //             error1 = "pilot"
+    //         } else if (validateInput(copilot)==="Is a number"){
+    //             error1 = "copilot"
+    //         }
+    //         console.log(`please enter a name for ${error1}`)
+    //     } else if (validateInput(cargoLevel) ==="Not a Number"||validateInput(fuelLevel) ==="Not a Number" ){
+    //         if(validateInput(cargoLevel) ==="Not a Number"&&validateInput(fuelLevel) ==="Not a Number" ){
+    //             error2 = "cargo level and fuel level"
+    //         } else if (validateInput(cargoLevel) ==="Not a Number"){
+    //             error2 = "cargo level"
+    //         } else if (validateInput(fuelLevel) ==="Not a Number" ){
+    //             error2 = "fuel level"
+    //         }
+    //         console.log(`please enter a number for ${error2}`)
 
         }
     }
