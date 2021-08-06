@@ -1,7 +1,7 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 // const {document, pilot, fuelLevel, cargoLevel, coPilot, list} = require("./script");
-
+ list.style.visibility = "hidden";
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
     let destination = document.getElementById("missionTarget");
