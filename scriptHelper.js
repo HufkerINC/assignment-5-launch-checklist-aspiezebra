@@ -101,7 +101,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             list.style.visibility = "hidden";
             launchStatus.innerHTML= "Shuttle is Ready for Launch"
         }
-    }
+    
 
 
 
@@ -129,7 +129,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //         console.log(`please enter a number for ${error2}`)
 
 
-    
+
     // if (validateInput(cargoLevel) === "Not A Number" || validateInput(cargoLevel) === "Empty") {
     //       alert("Please Enter a Number for Cargo Level");
     //   }
