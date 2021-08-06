@@ -101,12 +101,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             list.style.visibility = "visible";
             launchStatus.innerHTML= "Shuttle is Ready for Launch"
         }
-        if(cargoLevel <= levelGuide && fuelLevel>= levelGuide&& isNaN(pilot)&& isNaN(coPilot)){
+        if(cargoLevel <= levelGuide && fuelLevel>= levelGuide&& isNaN(pilot)&& isNaN(copilot)){
             list.style.visibility = "hidden";
             pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
             copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
-             launchStatus.innerHTML= "Shuttle is Ready for Launch"
         }
 
 
