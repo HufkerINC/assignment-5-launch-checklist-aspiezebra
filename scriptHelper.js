@@ -174,8 +174,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 async function myFetch() {
     let planetsReturned = "";
+    let webPage = "https://handlers.education.launchcode.org/static/planets.json";
 
-    planetsReturned = await fetch().then(function(response) {});
+    planetsReturned = await fetch(webPage).then(function(response) {
+
+
+        return response.json();
+    });
 
     return planetsReturned;
 }
