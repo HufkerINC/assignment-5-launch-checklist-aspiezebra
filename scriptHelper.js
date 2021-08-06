@@ -44,10 +44,15 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let cargoInput = document.getElementById("cargoLevel");
-    let fuelInput = document.getElementById("fuelLevel");
-    let pilotInput = document.getElementById("pilotStatus");
-    let copilotInput = document.getElementById("copilotStatus");
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
+    // let cargoInput = document.getElementById("cargoLevel");
+    // let fuelInput = document.getElementById("fuelLevel");
+    // let pilotInput = document.getElementById("pilotStatus");
+    // let copilotInput = document.getElementById("copilotStatus");
     let error1 = "";
     let error2 =""
     if (validateInput(pilot)==="Empty" || validateInput(copilot)=== "Empty"|| validateInput(fuelLevel)=== "Empty"|| validateInput(cargoLevel)=== "Empty"){
