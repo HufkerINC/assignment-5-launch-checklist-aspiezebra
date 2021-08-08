@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-const { myFetch, pickPlanet } = require("./scriptHelper");
+const { myFetch, planetPicked } = require("./scriptHelper");
 
 addEventListener("load", function() {
     let document = window.document
@@ -12,8 +12,8 @@ addEventListener("load", function() {
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
-        if (validateInput(copilot.value) === "Empty" || validateInput(pilot.value) === "Empty" || validateInput(fuelLevel.value) === "Empty" || validateInput(cargoLevel.value) === "Empty") {
-            window.alert('All fields are Required!');
+        if (validateInput(copilot.value) == "Empty" || validateInput(pilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoLevel.value) == "Empty") {
+            window.alert('All fields are Required!!!');
             list.style.visibility = "hidden";
             event.preventDefault();
         }
@@ -25,7 +25,7 @@ addEventListener("load", function() {
 
         if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
             list.style.visibility = "hidden";
-            window.alert("Fuel Level and Cargo Mass should be numbers only.");
+            window.alert("Fuel Level and Cargo Mass should be Numbers");
             event.preventDefault();
         }
         event.preventDefault();
@@ -49,5 +49,5 @@ listedPlanetsResponse.then(function(result) {
 // module.exports.addDestinationInfo = addDestinationInfo;
 // module.exports.validateInput= validateInput;
 // module.exports.formSubmission= formSubmission;
-// module.exports.pickPlanet=pickPlanet;
+// module.exports.planetPicked=planetPicked;
 // module.exports.myFetch=myFetch;
