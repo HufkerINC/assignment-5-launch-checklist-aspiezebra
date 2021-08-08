@@ -31,6 +31,9 @@ addEventListener("load", function() {
         event.preventDefault();
     })
 
+
+    
+
 })
 let listedPlanets;
 // Set listedPlanetsResponse equal to the value returned by calling myFetch()

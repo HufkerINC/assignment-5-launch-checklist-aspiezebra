@@ -69,6 +69,84 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let error1 = "";
     let error2 ="";
     let levelGuide = 10000;
+
+
+
+    let inputOK = false;
+
+      if (pName.value === ""){
+         alert("All fields are required!");
+         event.preventDefault();
+      } else if (!isNaN(pName.value) || typeof pName.value !== "string"){
+         alert("Make sure to enter valid information for each field!");
+         event.preventDefault();
+      } else if (cPName.value === ""){
+         alert("All fields are required!");
+         event.preventDefault();
+      } else if (!isNaN(cPName.value) || typeof cPName.value !== "string"){
+         alert("Make sure to enter valid information for each field!");
+         event.preventDefault();
+      } else if (fuel.value === ""){
+         alert("All fields are required!");
+         event.preventDefault();
+      } else if (isNaN(fuel.value)){
+         alert("Make sure to enter valid information for each field!");
+         event.preventDefault();
+      } else if (mass.value === ""){
+         alert("All fields are required!");
+         event.preventDefault();
+      } else if (isNaN(mass.value)){
+         alert("Make sure to enter valid information for each field!");
+         event.preventDefault();
+      } else {
+         inputOK = true;
+      }
+
+      const faultyItems = document.getElementById("faultyItems");
+
+      const pilotStatus = document.getElementById("pilotStatus")
+      pilotStatus.innerHTML = `Pilot Ready (${pName.value})`;
+
+      const copilotStatus = document.getElementById("copilotStatus")
+      copilotStatus.innerHTML = `Co-pilot Ready (${cPName.value})`;
+
+      const fuelStatus = document.getElementById("fuelStatus");
+      const cargoStatus = document.getElementById("cargoStatus");
+      let fuelOK = true;
+      let cargoOK = true;
+
+      if (fuel.value< 10000){
+         fuelStatus.innerHTML = "Not enough fuel for launch";
+         faultyItems.style.visibility = "visible";
+         launchStatus.innerHTML = "Shuttle not ready for launch";
+         launchStatus.style.color = "red";
+         fuelOK = false;
+      }
+
+      if (mass.value > 10000){
+         cargoStatus.innerHTML = "Too much mass for the shuttle to take off";
+         faultyItems.style.visibility = "visible";
+         launchStatus.innerHTML = "Shuttle not ready for launch";
+         launchStatus.style.color = "red";
+         cargoOK = false;
+      }
+
+      if(!inputOK){
+         launchStatus.innerHTML = "Shuttle not ready for launch";
+         launchStatus.style.color = "red";
+      }
+
+      if(cargoOK && fuelOK && inputOK) {
+         launchStatus.innerHTML = "Shuttle is ready for launch";
+         launchStatus.style.color = "green";
+         faultyItems.style.visibility = "hidden";
+      }
+   })
+})
+
+
+
+
     if(isNaN(pilot)&&isNaN(copilot)){
          pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
@@ -115,6 +193,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.innerHTML= "Shuttle is Ready for Launch"
         } else if(cargoLevel <= levelGuide && fuelLevel>= levelGuide&& isNaN(pilot)&& isNaN(copilot)){
             list.style.visibility = "visible";
+            launchStatus.innerHTML = "Shuttle is ready for launch";
+            launchStatus.style.color = "green";
+            faultyItems.style.visibility = "hidden";
             pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
             copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
              launchStatus.style.color ="rgb(65, 159, 106)";
@@ -129,6 +210,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
              fuelStatus.textContent="Fuel level high enough for launch";
              cargoStatus.textContent="Cargo mass low enough for launch";
         }
+
     //     list.style.visibility="hidden"
     //  pilotStatus.textContent="Pilot Ready"
     //   copilotStatus.textContent="Co-pilot Ready"
