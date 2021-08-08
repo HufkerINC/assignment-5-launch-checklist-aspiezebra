@@ -13,19 +13,19 @@ addEventListener("load", function() {
     form.addEventListener("submit", function(event) {
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
         if (validateInput(copilot.value) === "Empty" || validateInput(pilot.value) === "Empty" || validateInput(fuelLevel.value) === "Empty" || validateInput(cargoLevel.value) === "Empty") {
-            alert('All fields are Required!');
+            window.alert('All fields are Required!');
             list.style.visibility = "hidden";
             event.preventDefault();
         }
         if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
             list.style.visibility = "hidden";
-            alert("Enter a name for Pilot and Co-pilot.");
+            window.alert("Enter a name for Pilot and Co-pilot.");
             event.preventDefault();
         }
 
         if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
             list.style.visibility = "hidden";
-            alert("Fuel Level and Cargo Mass should be numbers only.");
+            window.alert("Fuel Level and Cargo Mass should be numbers only.");
             event.preventDefault();
         }
         event.preventDefault();
