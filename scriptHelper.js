@@ -69,18 +69,18 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let error1 = "";
     let error2 ="";
     let levelGuide = 10000;
-    if(isNaN(pilotName)&&isNaN(copilotName)){
-         pilotStatus.innerHTML =`Pilot ${pilotName} is ready for launch`;
-        copilotStatus.innerHTML =`Co-pilot ${copilotName} is ready for launch`;
-    } else if(!isNaN(pilotName)||!isNaN(copilotName)){
-        if(!isNaN(pilotName)){
+    if(isNaN(pilot)&&isNaN(copilot)){
+         pilotStatus.innerHTML =`Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML =`Co-pilot ${copilot} is ready for launch`;
+    } else if(!isNaN(pilot)||!isNaN(copilot)){
+        if(!isNaN(pilot)){
              pilotStatus.innerHTML =`please enter a name for the pilot `;
               launchStatus.innerHTML= "Shuttle Not Ready for Launch";
               launchStatus.style.color ="rgb(199, 37, 78)";
               list.style.visibility = "visible";
 
              }
-       if(!isNaN(copilotName)){
+       if(!isNaN(copilot)){
             copilotStatus.innerHTML =`please enter a name for the copilot `;
              launchStatus.innerHTML= "Shuttle Not Ready for Launch";
              list.style.visibility = "visible";
