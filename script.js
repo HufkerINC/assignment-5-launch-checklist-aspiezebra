@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-const {myFetch, pickPlanet} = require("./scriptHelper");
+const { myFetch, pickPlanet } = require("./scriptHelper");
 
 addEventListener("load", function() {
     let document = window.document
@@ -10,14 +10,14 @@ addEventListener("load", function() {
     let list = document.getElementById("faultyItems");
     list.style.visibility = "hidden";
     let form = document.querySelector("form");
-    form.addEventListener("submit", function(event){
+    form.addEventListener("submit", function(event) {
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
-        if(validateInput(copilot.value)==="Empty"||   validateInput(pilot.value)=== "Empty"||validateInput(fuelLevel.value)==="Empty"||validateInput(cargoLevel.value)==="Empty"){
+        if (validateInput(copilot.value) === "Empty" || validateInput(pilot.value) === "Empty" || validateInput(fuelLevel.value) === "Empty" || validateInput(cargoLevel.value) === "Empty") {
             alert('All fields are Required!');
-            list.style.visibility="hidden";
-               event.preventDefault();
+            list.style.visibility = "hidden";
+            event.preventDefault();
         }
-      if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
+        if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
             list.style.visibility = "hidden";
             alert("Enter a name for Pilot and Co-pilot.");
             event.preventDefault();
@@ -31,19 +31,19 @@ addEventListener("load", function() {
         event.preventDefault();
     })
 
-    })
-    let listedPlanets;
-    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse=myFetch() ;
-        listedPlanetsResponse.then(function(result) {
-        listedPlanets = result;
-        console.log(listedPlanets);
-    }).then(function() {
-        console.log(listedPlanets);
-        let planetPicked = planetPicked(listedPlanets);
-         addDestinationInfo(window.document, pickedPlanet.name, pickedPlanet.diameter, pickedPlanet.star, pickedPlanet.distance, pickedPlanet.moons, pickedPlanet.image);
-        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-    })
+})
+let listedPlanets;
+// Set listedPlanetsResponse equal to the value returned by calling myFetch()
+let listedPlanetsResponse = myFetch();
+listedPlanetsResponse.then(function(result) {
+    listedPlanets = result;
+    console.log(listedPlanets);
+}).then(function() {
+    console.log(listedPlanets);
+    let planetPicked = planetPicked(listedPlanets);
+    addDestinationInfo(window.document, planetPicked.name, planetPicked.diameter, planetPicked.star, planetPicked.distance, planetPicked.moons, planetPicked.image);
+    // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+})
 
 
 // module.exports.addDestinationInfo = addDestinationInfo;
